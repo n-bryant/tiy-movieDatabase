@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>The Movie Database</title>
+        <link rel="stylesheet" href="styles/app.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Movie Details</h1>
+            <aside>
+                <form class="search-form" autocomplete='off'>
+                    <input id="search-field" type="text" name="movie-name" placeholder="Search...">
+                    <input type="submit" value="Find Movie">
+                </form>
+            </aside>
+            <div class="content">
+              <!-- Movie templates will go here -->
+            </div>
+        </div>
+
+        <script id="movie-template" type="text/x-handlebars-template">
+            <div class="movie-container">
+                <img src="{{image}}">
+                <div>
+                    <h2>{{title}}</h2>
+                    <p>{{overview}}</p>
+                    <a href="#" class="related-search-link" data-id="{{movieId}}">Search Related</a>
+                    <select class="movie-rating" data-id="{{movieId}}">
+                        <option value=''>Rate</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="delete">Delete</option>
+                    </select>
+                </div>
+                <div class="close">X</div>
+            </div>
+        </script>
+        <script src="js/vendor/jquery-3.1.1.min.js"></script>
+        <script src="js/vendor/handlebars-v4.0.5.js"></script>
+        <!-- <script src="js/intro.js"></script> -->
+        <script src="js/app.js"></script>
+    </body>
+</html>
